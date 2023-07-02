@@ -24,8 +24,8 @@ module.exports = {
         const result = [...Array(count)].map(_ => randomNumber(1, range)).reduce((acm, v) => {return acm + v}, 0);
 
         let response = `${count}d${range} -> **${result}**`;
-        if (result === range) response += " (**MIN**)";
-        else if (result === range * count) response += " (**MAX**)";
+        if (result === count) response += " (**FUMBLE**)";
+        else if (result === range * count) response += " (**CRITICAL**)";
         await interaction.reply(response);
     },
 };
